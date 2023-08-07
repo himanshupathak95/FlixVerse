@@ -33,6 +33,9 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	// dot-env
+	implementation("me.paulschwarz:spring-dotenv:3.0.0")
 }
 
 tasks.withType<KotlinCompile> {
