@@ -3,9 +3,10 @@ package dev.himanshu.flixverse
 import org.bson.types.ObjectId
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
+import org.springframework.data.mongodb.core.mapping.DocumentReference
 
-@Document(collection = "media")
-data class Media(var a: String) {
+@Document(collection = "Movies")
+data class Movie(var a: String) {
     @Id
     private var id: ObjectId = ObjectId.get()
     private var imdbId: String = ""
@@ -15,4 +16,6 @@ data class Media(var a: String) {
     private var poster: String = ""
     private var genres: List<String> = emptyList()
     private var backdrops: List<String> = emptyList()
+    @DocumentReference
+    private var reviewIds: List<Review> = emptyList()
 }
