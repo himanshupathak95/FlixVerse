@@ -5,6 +5,4 @@ import org.springframework.data.mongodb.repository.MongoRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface MovieRepository : MongoRepository<Movie, ObjectId> {
-    fun findMovieByImdbId(imdbId: String): Movie?
-}
+interface ReviewRepository : MongoRepository<Review, ObjectId>
