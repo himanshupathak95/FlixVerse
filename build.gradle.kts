@@ -29,13 +29,11 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
-    annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-    // dot-env
-    implementation("me.paulschwarz:spring-dotenv:3.0.0")
+    // for dot-env processing
+    implementation("me.paulschwarz:spring-dotenv:4.0.0")
 }
 
 tasks.withType<KotlinCompile> {

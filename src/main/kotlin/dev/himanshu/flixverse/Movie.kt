@@ -6,16 +6,16 @@ import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.core.mapping.DocumentReference
 
 @Document(collection = "Movies")
-data class Movie(var a: String) {
+data class Movie(
     @Id
-    private var id: ObjectId = ObjectId.get()
-    private var imdbId: String = ""
-    private var title: String = ""
-    private var releaseDate: String = ""
-    private var trailerLink: String = ""
-    private var poster: String = ""
-    private var genres: List<String> = emptyList()
-    private var backdrops: List<String> = emptyList()
+    var id: ObjectId? = null,
+    var imdbId: String,
+    var title: String,
+    var releaseDate: String,
+    var trailerLink: String,
+    var poster: String,
+    var backdrops: List<String>,
+    var genres: List<String>,
     @DocumentReference
-    private var reviewIds: List<Review> = emptyList()
-}
+    var reviews: List<Review> = emptyList(),
+)
