@@ -34,11 +34,12 @@ jobs:
       # Builds the project
       - name: Build the project
         run: ./gradlew clean build
+        shell: bash
       
       # Runs tests separately
       - name: Run tests
         run: ./gradlew test
-            
+        shell: bash
 
 
       
