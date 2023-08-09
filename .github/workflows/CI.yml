@@ -22,6 +22,14 @@ jobs:
     runs-on: windows-latest
 
 
+    # Host a MongoDb docker service
+    services:
+      mongodb:
+        image: mongo:latest   # Use the latest MongoDB Docker image
+        ports:
+          - 27017:27017       # Map container port to host port
+
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -36,7 +44,11 @@ jobs:
           java-version: 17
           distribution: 'adopt'
           gradle-version: 8.2.1
-          
+
+      #Host a mongodb instance
+      - name: Start MongoDB Docker container
+        run: docker run -d -p 27017:27017 --name mongodb mongo:latest
+
           
       # Builds the project
       - name: Build the project
