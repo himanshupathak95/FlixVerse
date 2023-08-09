@@ -35,7 +35,8 @@ jobs:
         with:
           java-version: 17
           distribution: 'adopt'
-
+          gradle-version: 8.2.1
+          
           
       # Builds the project
       - name: Build the project
