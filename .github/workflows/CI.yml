@@ -39,17 +39,27 @@ jobs:
         with:
           java-version: 17
           distribution: 'adopt'
+          
+      
+      - name: Set up Gradle
+        uses: gradle/wrapper-action@v2
+        with:
           gradle-version: 8.2.1
+          
+      - name: Run Tests with MongoDB Atlas
+        env:
+          MONGODB_URI: "mongodb+srv://himanshupat95:THESHIELD95@cluster0.u94uc0u.mongodb.net/"
+          MONGODB_DBNAME: "flixverse"
+        run: ./gradlew --warning-mode all test
 
-
-      # Builds the project
-      - name: Build the project
-        run: ./gradlew clean build
-        shell: bash
+#       # Builds the project
+#       - name: Build the project
+#         run: ./gradlew clean build
+#         shell: bash
 
       
-      # Runs tests separately
-      - name: Run tests
-        run: ./gradlew test
-        shell: bash
+#       # Runs tests separately
+#       - name: Run tests
+#         run: ./gradlew test
+#         shell: bash
       
