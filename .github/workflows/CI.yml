@@ -40,11 +40,6 @@ jobs:
           java-version: 17
           distribution: 'adopt'
           
-      
-      - name: Set up Gradle
-        uses: gradle/wrapper-action@v2
-        with:
-          gradle-version: 8.2.1
           
       - name: Run Tests with MongoDB Atlas
         env:
