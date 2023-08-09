@@ -29,14 +29,16 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-    // for dot-env processing
+    // dot-env processing dependency
     implementation("me.paulschwarz:spring-dotenv:4.0.0")
-
-    // OAuth2 dependency
-//    implementation("org.springframework.boot:spring-boot-starter-security")
+    // Mockk dependency
+    testImplementation("io.mockk:mockk:1.12.0")
+    // Junit5 dependency
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 }
 
 tasks.withType<KotlinCompile> {
