@@ -48,6 +48,7 @@ class MovieServiceTest {
         movieRepository = mockk()
         movieService = MovieService(movieRepository)
     }
+
     @AfterEach
     fun shutDown() {
         clearAllMocks()

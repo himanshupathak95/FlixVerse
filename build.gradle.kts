@@ -32,13 +32,10 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-
-    // dot-env processing dependency
     implementation("me.paulschwarz:spring-dotenv:4.0.0")
-    // Mockk dependency
     testImplementation("io.mockk:mockk:1.12.0")
-    // Junit5 dependency
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.withType<KotlinCompile> {
