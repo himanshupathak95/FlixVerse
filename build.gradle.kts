@@ -36,7 +36,7 @@ dependencies {
     implementation("me.paulschwarz:spring-dotenv:4.0.0")
 
     // OAuth2 dependency
-    implementation("org.springframework.boot:spring-boot-starter-security")
+//    implementation("org.springframework.boot:spring-boot-starter-security")
 }
 
 tasks.withType<KotlinCompile> {
