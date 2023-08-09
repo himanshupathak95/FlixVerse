@@ -23,7 +23,7 @@ jobs:
 
 
     env:
-      MONGODB_URI: mongodb+srv://himanshupat95:THESHIELD95@cluster0.u94uc0u.mongodb.net
+      MONGODB_URI: mongodb+srv://himanshupat95:THESHIELD95@cluster0.u94uc0u.mongodb.net/flixverse?retryWrites=true&w=majority
 
 
     # Steps represent a sequence of tasks that will be executed as part of the job
