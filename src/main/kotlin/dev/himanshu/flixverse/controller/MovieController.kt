@@ -1,5 +1,7 @@
-package dev.himanshu.flixverse
+package dev.himanshu.flixverse.controller
 
+import dev.himanshu.flixverse.model.Movie
+import dev.himanshu.flixverse.service.MovieService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable

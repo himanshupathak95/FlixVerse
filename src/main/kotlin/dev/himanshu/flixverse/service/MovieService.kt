@@ -1,5 +1,7 @@
-package dev.himanshu.flixverse
+package dev.himanshu.flixverse.service
 
+import dev.himanshu.flixverse.model.Movie
+import dev.himanshu.flixverse.repository.MovieRepository
 import org.springframework.stereotype.Service
 
 @Service

@@ -1,4 +1,4 @@
-package dev.himanshu.flixverse
+package dev.himanshu.flixverse.model
 
 import org.bson.types.ObjectId
 import org.springframework.data.annotation.Id
