@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/v1/movies")
-class MovieController(private val service: MovieService) {
+class MovieController(
+    private val service: MovieService
+) {
 
     @GetMapping
     fun getMovies(): ResponseEntity<List<Movie>> {
