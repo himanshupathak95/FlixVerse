@@ -64,9 +64,8 @@ class MovieServiceTest {
 
     @Test
     fun `test findMovieByImdbId with existing movie`() {
-        val imdbId = imdbId1
-        every { movieRepository.findMovieByImdbId(imdbId) } returns movie1
-        val result = movieService.findMovieByImdbId(imdbId)
+        every { movieRepository.findMovieByImdbId(imdbId1) } returns movie1
+        val result = movieService.findMovieByImdbId(imdbId1)
         assertEquals(movie1, result)
     }
 

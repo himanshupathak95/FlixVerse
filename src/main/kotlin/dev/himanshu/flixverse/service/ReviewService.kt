@@ -11,7 +11,10 @@ import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 
 @Service
-class ReviewService(private val repository: ReviewRepository, private val mongoTemplate: MongoTemplate) {
+class ReviewService(
+    private val repository: ReviewRepository,
+    private val mongoTemplate: MongoTemplate
+) {
     fun createReview(reviewBody: String, imdbId: String): Review {
         val review = repository.insert(
             Review(

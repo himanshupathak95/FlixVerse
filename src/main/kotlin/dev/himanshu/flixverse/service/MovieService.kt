@@ -5,7 +5,9 @@ import dev.himanshu.flixverse.repository.MovieRepository
 import org.springframework.stereotype.Service
 
 @Service
-class MovieService(private val repository: MovieRepository) {
+class MovieService(
+    private val repository: MovieRepository
+) {
 
     fun findAllMovies(): List<Movie> {
         return repository.findAll()
