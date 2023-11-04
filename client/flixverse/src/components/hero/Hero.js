@@ -28,7 +28,7 @@ const Hero = ({movies}) => {
                             <img src={movie.poster} alt=""/>
                           </div>
                           <div className="movie-title">
-                            <h1 class="boujee-text">{movie.title}</h1>
+                            <h1 className="boujee-text">{movie.title}</h1>
                           </div>
                           <div className="movie-buttons-container">
                             <Link to={`/Trailer/${movie.trailerLink.substring(movie.trailerLink.length - 11)}`}>
