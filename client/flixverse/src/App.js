@@ -45,6 +45,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route path="/" element={<Home movies={movies}/>}></Route>
+            <Route path="/explore" element={<Home movies={movies}/>}></Route>
             <Route path="/Trailer/:ytTrailerId" element={<Trailer/>}></Route>
             <Route path="/Reviews/:movieId"
                    element={<Reviews getMovieData={getMovieData} movie={movie} reviews={reviews}

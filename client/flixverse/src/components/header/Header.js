@@ -22,10 +22,10 @@ const Header = () => {
                 navbarScroll
             >
               <NavLink className="nav-link" to="/">Trending #10</NavLink>
-              <NavLink className="nav-link" to="/watchList">Home</NavLink>
+              <NavLink className="nav-link" to="/explore" >Explore</NavLink>
             </Nav>
-            <Button variant="outline-info" className="me-2">Login</Button>
-            <Button variant="outline-info">Register</Button>
+            <Button variant="outline-info" className="me-2">Sign in</Button>
+            <Button variant="outline-info" className="me-2">Register</Button>
           </Navbar.Collapse>
         </Container>
       </Navbar>
