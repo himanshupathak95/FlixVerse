@@ -24,8 +24,12 @@ const Header = () => {
               <NavLink className="nav-link" to="/">Trending #10</NavLink>
               <NavLink className="nav-link" to="/explore" >Explore</NavLink>
             </Nav>
-            <Button variant="outline-info" className="me-2">Sign in</Button>
-            <Button variant="outline-info" className="me-2">Register</Button>
+
+            <Nav className="ms-auto">
+              <NavLink className="nav-link" to="/login" >Login</NavLink>
+              <NavLink className="nav-link" to="/register" >Register</NavLink>
+            </Nav>
+
           </Navbar.Collapse>
         </Container>
       </Navbar>

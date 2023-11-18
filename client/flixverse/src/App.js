@@ -8,12 +8,19 @@ import Header from './components/header/Header';
 import Trailer from './components/trailer/Trailer';
 import Reviews from './components/reviews/Reviews';
 import NotFound from './components/notFound/NotFound';
+import {Login} from "./components/login-register/Login";
+import {Register} from "./components/login-register/Register";
 
 function App() {
 
   const [movies, setMovies] = useState();
   const [movie, setMovie] = useState();
   const [reviews, setReviews] = useState([]);
+  const [currentForm, setCurrentForm] = useState('login');
+
+  const toggleForm = (formName) => {
+    setCurrentForm(formName);
+  }
 
   const getMovies = async () => {
     try {
@@ -47,6 +54,8 @@ function App() {
             <Route path="/" element={<Home movies={movies}/>}></Route>
             <Route path="/explore" element={<Home movies={movies}/>}></Route>
             <Route path="/Trailer/:ytTrailerId" element={<Trailer/>}></Route>
+            <Route path="/login" element={<Login/>}></Route>
+            <Route path="/register" element={<Register/>}></Route>
             <Route path="/Reviews/:movieId"
                    element={<Reviews getMovieData={getMovieData} movie={movie} reviews={reviews}
                                      setReviews={setReviews}/>}></Route>
