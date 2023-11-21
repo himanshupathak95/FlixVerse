@@ -9,6 +9,7 @@ export const Login = (props) => {
     const [pass, setPass] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate(); // Use useNavigate hook to get the navigation function
+    const { login } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -26,8 +27,8 @@ export const Login = (props) => {
 
             if (data.success) {
                 console.log('Login successful');
+                login(data.userId); // Use the login function from the context
                 navigate('/', { state: { fromLogin: true } });
-                props.userId
             } else {
                 console.error('Login failed:', data.message);
                 setErrorMessage('Incorrect credentials');
