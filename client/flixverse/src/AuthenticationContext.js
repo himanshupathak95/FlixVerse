@@ -15,11 +15,21 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const navigate = useNavigate(); // Access the navigate function
 
+    // Function to handle actions on successful login
+    const onLoginSuccess = (userId) => {
+        // Example: You can perform additional actions here
+        console.log(`User ${userId} logged in successfully.`);
+        // Redirect to the home page with the username displayed on top right
+        navigate('/', { state: { fromLogin: true } });
+    };
+
     const login = (userId) => {
         // Set the user after successful login
-        setUser(userId);
-        // Additional actions to perform on successful login
-        onLoginSuccess(userId);
+        setUser((prevUser) => {
+            // Additional actions to perform on successful login
+            onLoginSuccess(userId);
+            return userId; // Set the user state
+        });
     };
 
     const logout = () => {
@@ -32,14 +42,6 @@ export const AuthProvider = ({ children }) => {
         user,
         login,
         logout,
-    };
-
-    // Function to handle actions on successful login
-    const onLoginSuccess = (userId) => {
-        // Example: You can perform additional actions here
-        console.log(`User ${userId} logged in successfully.`);
-        // Redirect to the home page with the username displayed on top right
-        navigate('/', { state: { fromLogin: true } });
     };
 
     return <AuthContext.Provider value={authContextValue}>{children}</AuthContext.Provider>;

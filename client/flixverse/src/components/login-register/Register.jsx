@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import "./LoginRegister.css";
 import {Login} from "./Login";
+import { useAuth } from '../../AuthenticationContext';
+import {useNavigate} from "react-router-dom";
 
 export const Register = (props) => {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
     const [name, setName] = useState("");
+    const navigate = useNavigate(); // Use useNavigate hook to get the navigation function
+    const { login } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -23,7 +27,10 @@ export const Register = (props) => {
 
             if (data.success) {
                 console.log('Registration successful');
-                // Handle successful registration, e.g., redirect or show success message
+                // Log in the user after successful registration
+                login(data.userId);
+                // Redirect to the home page with the username displayed on top right
+                navigate('/', { state: { formRegistration: true } });
             } else {
                 console.error('Registration failed:', data.message);
                 // Handle failed registration, e.g., show error message
